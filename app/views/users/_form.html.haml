@@ -1,0 +1,10 @@
+= simple_form_for user do |f|
+  .inputs
+    = f.error_notification
+    = f.input :full_name
+    = f.input :email
+    = f.input :password, as: :password
+    = f.input :password_confirmation, as: :password
+  .form_actions
+    = f.submit submit_message, class: "btn btn-primary"
+    = button_tag t('.cancel'), type: "reset", class: "btn"

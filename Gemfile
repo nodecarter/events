@@ -17,12 +17,14 @@ group :assets do
   gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+
+  gem "twitter-bootstrap-rails"
 end
 
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
@@ -38,4 +40,13 @@ gem 'thin'
 # gem 'debugger'
 
 gem 'russian'
-gem 'haml'
+gem 'haml-rails'
+gem 'simple_form'
+
+group :test do
+  gem 'simplecov'
+  gem "factory_girl_rails", "~> 4.0"
+  gem 'turn', '~> 0.9.3', :require => false
+  gem 'minitest'
+  gem 'tconsole'
+end

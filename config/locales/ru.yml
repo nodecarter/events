@@ -1,0 +1,8 @@
+ru:
+  users:
+    create:
+      successfull: "Учетная запись успешно создана!"
+    form:
+      cancel: "Сброс"
+    new:
+      create_user: "Создать учетную запись"
