@@ -14,6 +14,14 @@ YaAcl::Builder.build do
     resource 'SessionsController' do
       privilege :destroy
     end
+    resource 'Account::WelcomeController' do
+      privilege :index
+    end
+    resource 'Account::UsersController' do
+      privilege :edit
+      privilege :update
+      privilege :destroy
+    end
   end
 
   resources :guest do

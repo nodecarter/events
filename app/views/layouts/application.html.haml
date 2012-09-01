@@ -22,16 +22,18 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.brand(href="#") Events
+          = link_to t(".site_name"), root_path, class: "brand"
           .container.nav-collapse
             %ul.nav
               - if signed_in?
-                %li= link_to t(".profile"), "/todo"
+                %li= link_to t(".profile"), account_root_path
                 %li= link_to t(".logout"), session_path, method: :delete
               - else
                 %li= link_to t(".login"), new_session_path
                 %li= link_to t(".register"), new_user_path
-
+            %ul.nav.pull-right
+              %li.navbar-text
+                = link_to_if can?(:account_root), current_user, account_root_path
 
     .container-fluid
 
@@ -42,7 +44,7 @@
               %li.nav-header
                 = t(".sidebar")
               - if signed_in?
-                %li= link_to t(".profile"), "/todo"
+                %li= link_to t(".profile"), account_root_path
                 %li= link_to t(".logout"), session_path, method: :delete
               - else
                 %li= link_to t(".login"), new_session_path

@@ -1,0 +1,12 @@
+ru:
+  simple_form:
+    "yes": 'Да'
+    "no": 'Нет'
+    required:
+      text: 'обязательно для ввода'
+      mark: '*'
+    error_notification:
+      default_message: "Исправьте ошибки:"
+    labels:
+      account_user:
+        password: 'Новый пароль'

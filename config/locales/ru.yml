@@ -3,7 +3,7 @@ ru:
     create:
       successfull: "Учетная запись успешно создана!"
     form:
-      cancel: "Сброс"
+      cancel: "Отмена"
       register: "Регистрация"
     new:
       create_user: "Создать учетную запись"
@@ -15,6 +15,7 @@ ru:
     new:
       login_form: "Вход в систему"
       login: "Войти"
+      cancel: "Отмена"
   layouts:
     application:
       profile: "Профиль"
@@ -22,3 +23,29 @@ ru:
       login: "Войти"
       register: "Зарегистрироваться"
       sidebar: "меню"
+      site_name: "События"
+  account:
+    users:
+      form:
+        change_profile: "Изменить учетную запись"
+      edit:
+        update: "Изменить"
+      update:
+        account_updated: "Учетная запись обновлена"
+        failed: "Не удалось обновить учетную запись."
+    welcome:
+      index:
+        change_user: "Изменить учетную запись"
+    destroy:
+      account_deleted: "Учетная запись удалена"
+  activerecord:
+    attributes:
+      user:
+        full_name: "Полное имя"
+        email: "E-mail"
+        state: "Состояние"
+        password: "Пароль"
+        password_confirmation: "Подтверждение"
+    errors:
+      messages:
+        email: "имеет некорректный формат."

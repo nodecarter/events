@@ -147,6 +147,8 @@ GEM
     uglifier (1.2.7)
       execjs (>= 0.3.0)
       multi_json (~> 1.3)
+    validates (0.0.3)
+      activemodel (>= 3.0.0)
     ya_acl (0.0.6)
 
 PLATFORMS
@@ -171,4 +173,5 @@ DEPENDENCIES
   turn (~> 0.9.3)
   twitter-bootstrap-rails
   uglifier (>= 1.0.3)
+  validates
   ya_acl

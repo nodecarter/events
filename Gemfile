@@ -43,6 +43,7 @@ gem 'russian'
 gem 'haml-rails'
 gem 'simple_form'
 gem 'ya_acl'
+gem 'validates'
 
 group :test do
   gem 'simplecov'
