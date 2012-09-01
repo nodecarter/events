@@ -11,6 +11,9 @@ YaAcl::Builder.build do
     resource 'UsersController' do
       privilege :show
     end
+    resource 'SessionsController' do
+      privilege :destroy
+    end
   end
 
   resources :guest do
@@ -21,6 +24,10 @@ YaAcl::Builder.build do
       privilege :new
       privilege :create
       privilege :show
+    end
+    resource 'SessionsController' do
+      privilege :new
+      privilege :create
     end
   end
 end

@@ -25,9 +25,13 @@
           %a.brand(href="#") Events
           .container.nav-collapse
             %ul.nav
-              %li= link_to "Link 1", "/path1"
-              %li= link_to "Link 2", "/path2"
-              %li= link_to "Link 3", "/path3"
+              - if signed_in?
+                %li= link_to t(".profile"), "/todo"
+                %li= link_to t(".logout"), session_path, method: :delete
+              - else
+                %li= link_to t(".login"), new_session_path
+                %li= link_to t(".register"), new_user_path
+
 
     .container-fluid
 
@@ -35,11 +39,16 @@
         .span3
           .well.sidebar-nav
             %ul.nav.nav-list
-              %li.nav-header Sidebar
-              %li= link_to "Link 1", "/path1"
-              %li= link_to "Link 2", "/path2"
-              %li= link_to "Link 3", "/path3"
+              %li.nav-header
+                = t(".sidebar")
+              - if signed_in?
+                %li= link_to t(".profile"), "/todo"
+                %li= link_to t(".logout"), session_path, method: :delete
+              - else
+                %li= link_to t(".login"), new_session_path
+                %li= link_to t(".register"), new_user_path
         .span9
+          = render "shared/flash", flash: flash
           = yield
 
       %footer

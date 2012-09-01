@@ -4,5 +4,21 @@ ru:
       successfull: "Учетная запись успешно создана!"
     form:
       cancel: "Сброс"
+      register: "Регистрация"
     new:
       create_user: "Создать учетную запись"
+  sessions:
+    create:
+      logged_in: "Добро пожаловать, %{user}!"
+      error: "Ошибка! Пользователь с таким email и паролем не найден."
+      logged_out: "Ваша сессия завершена."
+    new:
+      login_form: "Вход в систему"
+      login: "Войти"
+  layouts:
+    application:
+      profile: "Профиль"
+      logout: "Выйти"
+      login: "Войти"
+      register: "Зарегистрироваться"
+      sidebar: "меню"

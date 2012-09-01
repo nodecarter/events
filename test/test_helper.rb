@@ -3,6 +3,7 @@ require 'simplecov'
 SimpleCov.start('rails') if ENV["COVERAGE"]
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
+include AuthHelper
 
 class ActiveSupport::TestCase
   require 'factory_girl'

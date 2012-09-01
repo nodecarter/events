@@ -1,0 +1,12 @@
+= simple_form_for current_user, url: session_path, html: { class: 'form-horizontal' } do |f|
+  - if (notification = f.error_notification)
+    .alert.alert-error.fade.in
+      %a.close{ "data-dismiss" => "alert", href: "#" } ×
+      = notification
+  %legend
+    = t ".login_form"
+  .inputs
+    = f.input :email, name: :email, input_html: { name: "email", value: params[:email] }
+    = f.input :password, input_html: { name: "password" }
+  .form-actions
+    = f.button :submit, t(".login"), class: 'btn-primary'

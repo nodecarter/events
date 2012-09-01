@@ -1,10 +1,15 @@
-= simple_form_for user do |f|
+= simple_form_for user, html: { class: 'form-horizontal' } do |f|
+  - if (notification = f.error_notification)
+    .alert.alert-error.fade.in
+      %a.close{ "data-dismiss" => "alert", href: "#" } ×
+      = notification
+  %legend
+    = t ".register"
   .inputs
-    = f.error_notification
     = f.input :full_name
     = f.input :email
     = f.input :password, as: :password
     = f.input :password_confirmation, as: :password
-  .form_actions
+  .form-actions
     = f.submit submit_message, class: "btn btn-primary"
-    = button_tag t('.cancel'), type: "reset", class: "btn"
+    = button_tag t('.cancel'), type: "reset", class: "btn btn-danger"

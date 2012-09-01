@@ -5,4 +5,8 @@ class User < ActiveRecord::Base
   def roles
     [:user]
   end
+
+  def to_s
+    full_name.present? ? full_name : email
+  end
 end
