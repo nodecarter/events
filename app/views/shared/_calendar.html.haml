@@ -12,5 +12,4 @@
     %dd
       - events[day].each do |event|
         %p
-          = link_to_if can?(:edit_account_event, :edit, { current_user_id: current_user.id,
-            event_user_id: event.user_id} ), event.name, edit_account_event_path(event)
+          = link_to_if (event.user == current_user), event.name, edit_account_event_path(event)

@@ -59,6 +59,9 @@ ru:
         update_event: "Изменить"
       form:
         event: "Форма редактирования события"
+        are_you_sure: "Действительно удалить событие?"
+        destroy: "Удалить"
+        cancel: "Отмена"
   activerecord:
     attributes:
       user:

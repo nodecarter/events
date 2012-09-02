@@ -6,7 +6,7 @@ class Account::EventsController < Account::ApplicationController
   def create
     @event = current_user.events.build(params[:event])
     if @event.save
-      redirect_to events_url, date: @event.date,
+      redirect_to events_url(date: @event.date),
                   notice: t("account.events.create.successfull")
     else
       render action: :new
@@ -28,10 +28,10 @@ class Account::EventsController < Account::ApplicationController
   end
 
   def destroy
-    @date = @event.date
     @event = current_user.events.find(params[:id])
+    @date = @event.date
     if @event.destroy
-      redirect_to events_url, date: @date,
+      redirect_to events_url(date: @date),
                   notice: t("account.events.destroy.successfull")
     else
       redirect_to edit_account_event_url(@event),

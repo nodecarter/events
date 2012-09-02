@@ -10,3 +10,7 @@
   .form-actions
     = f.submit submit_message, class: "btn btn-primary"
     = link_to t(".cancel"), events_path, class: "btn btn-danger"
+    - if event.persisted?
+      = link_to t(".destroy"), account_event_path(event), method: :delete,
+        confirm: t(".are_you_sure"), class: "btn btn-danger"
+
