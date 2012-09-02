@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
 
   validates :email, email: true, uniqueness: true, presence: true
 
+  has_many :events
+
   def roles
     [:user]
   end

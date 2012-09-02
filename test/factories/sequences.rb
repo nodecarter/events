@@ -6,4 +6,8 @@ FactoryGirl.define do
   sequence :string do |n|
     "string#{n}"
   end
+
+  sequence :date do |n|
+    Date.today + n.days
+  end
 end

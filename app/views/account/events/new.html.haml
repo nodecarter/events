@@ -1,0 +1,4 @@
+.page-header
+  %h1 Новое событие
+
+= render "form", event: @event, url: account_events_path, submit_message: t(".create_event")

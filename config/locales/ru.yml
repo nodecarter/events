@@ -13,9 +13,12 @@ ru:
       error: "Ошибка! Пользователь с таким email и паролем не найден."
       logged_out: "Ваша сессия завершена."
     new:
-      login_form: "Вход в систему"
       login: "Войти"
       cancel: "Отмена"
+      register: "Регистрация"
+      enter: "Вход"
+    form:
+      login_form: "Форма входа"
   layouts:
     application:
       profile: "Профиль"
@@ -24,6 +27,9 @@ ru:
       register: "Зарегистрироваться"
       sidebar: "меню"
       site_name: "События"
+      all_events: "Все события"
+      my_events: "Мои события"
+      new_event: "Добавить событие"
   account:
     users:
       form:
@@ -36,8 +42,23 @@ ru:
     welcome:
       index:
         change_user: "Изменить учетную запись"
+        delete_user: "Удалить учетную запись"
+        are_you_sure?: "Вы уверены что хотите удалить учетную запись?"
     destroy:
       account_deleted: "Учетная запись удалена"
+    events:
+      new:
+        create_event: "Создать"
+      create:
+        successfull: "Событие успешно создано!"
+      update:
+        successfull: "Событие успешно обновлено!"
+      destroy:
+        successfull: "Событие удалено."
+      edit:
+        update_event: "Изменить"
+      form:
+        event: "Форма редактирования события"
   activerecord:
     attributes:
       user:
@@ -46,6 +67,29 @@ ru:
         state: "Состояние"
         password: "Пароль"
         password_confirmation: "Подтверждение"
+      event:
+        name: "Название"
+        date: "Дата"
+        until_date: "Актуально до"
+        recurrent: "Повторение"
     errors:
       messages:
         email: "имеет некорректный формат."
+  welcome:
+    index:
+      all_events: "Все события"
+      own_events: "Мои события"
+  recurrent_types:
+    once: "без повторений"
+    daily: "ежедневно"
+    weekly: "еженедельно"
+    monthly: "ежемесячно"
+    yearly: "ежегодно"
+  events:
+    form:
+      event: "Форма редактирования события"
+  shared:
+    calendar:
+      create_event?: "Создать новое событие?"
+
+

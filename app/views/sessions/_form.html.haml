@@ -1,0 +1,10 @@
+= simple_form_for user, url: session_path, html: { class: 'form-horizontal' } do |f|
+  %legend
+    = t ".login_form"
+  .inputs
+    = f.error_notification
+    = f.input :email, name: :email, input_html: { name: "email", value: params[:email] }
+    = f.input :password, input_html: { name: "password" }, required: true
+  .form-actions
+    = f.button :submit, submit_message, class: 'btn-primary'
+    = link_to t(".cancel"), root_path, class: "btn btn-danger"

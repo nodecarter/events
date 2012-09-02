@@ -4,6 +4,12 @@ YaAcl::Builder.build do
     role :guest
   end
 
+  asserts do
+    assert :own_event, [:current_user_id, :event_user_id] do
+      current_user_id == event_user_id
+    end
+  end
+
   resources :user do
     resource 'WelcomeController' do
       privilege :index
@@ -22,6 +28,19 @@ YaAcl::Builder.build do
       privilege :update
       privilege :destroy
     end
+    resource 'EventsController' do
+      privilege :index
+    end
+    resource 'Account::EventsController' do
+      privilege :index
+      privilege :new
+      privilege :create
+      privilege :edit do
+        assert :own_event
+      end
+      privilege :update
+      privilege :destroy
+    end
   end
 
   resources :guest do
@@ -31,7 +50,6 @@ YaAcl::Builder.build do
     resource 'UsersController' do
       privilege :new
       privilege :create
-      privilege :show
     end
     resource 'SessionsController' do
       privilege :new

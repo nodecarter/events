@@ -1,1 +1,12 @@
-Hello #{current_user.full_name}!
+.page-header
+  %h1 События
+
+%p
+  Вы можете посмотреть список своих событий здесь:
+  = link_to t(".own_events"), account_events_path
+
+%p
+  Вы можете посмотреть список всех событий здесь:
+  = link_to t(".all_events"), events_path
+
+

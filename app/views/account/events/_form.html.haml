@@ -1,0 +1,12 @@
+= simple_form_for event, url: url, html: { class: 'form-horizontal' } do |f|
+  %legend
+    = t ".event"
+  .inputs
+    = f.error_notification
+    = f.input :name
+    = f.input :date, input_html: { class: "jquery-date" }, as: :string
+    = f.input :until_date, input_html: { class: "jquery-date" }, as: :string
+    = f.input :recurrent, collection: recurrents, include_blank: false
+  .form-actions
+    = f.submit submit_message, class: "btn btn-primary"
+    = link_to t(".cancel"), events_path, class: "btn btn-danger"

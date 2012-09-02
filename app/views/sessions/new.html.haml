@@ -1,13 +1,8 @@
-= simple_form_for current_user, url: session_path, html: { class: 'form-horizontal' } do |f|
-  - if (notification = f.error_notification)
-    .alert.alert-error.fade.in
-      %a.close{ "data-dismiss" => "alert", href: "#" } ×
-      = notification
-  %legend
-    = t ".login_form"
-  .inputs
-    = f.input :email, name: :email, input_html: { name: "email", value: params[:email] }
-    = f.input :password, input_html: { name: "password" }, required: true
-  .form-actions
-    = f.button :submit, t(".login"), class: 'btn-primary'
-    = link_to t(".cancel"), root_path, class: "btn btn-danger"
+.page-header
+  %h1
+    = t ".enter"
+%p
+  Если у Вас еще нет учетной записи, то зарегистрироваться вы можете здесь:
+  = link_to t(".register"), new_user_path, class: "btn"
+
+= render "form", user: current_user, url: session_path, submit_message: t(".login")

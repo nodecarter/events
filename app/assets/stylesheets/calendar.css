@@ -1,0 +1,16 @@
+.calendar-header {
+  font-size: 3em;
+  text-align: center;
+}
+
+table.calendar {
+  table-layout: fixed;
+}
+
+td.outside{
+  background-color: #e0f0f0;
+}
+
+td.today{
+  background-color: #fffacd;
+}
